@@ -1,5 +1,9 @@
 package gameLogic;
 
+/**
+ * @author Infininte
+ */
+
 import java.util.Scanner;
 //import gui.printBoard;
 import gameLogic.littleBoard;
@@ -56,7 +60,7 @@ public class bigBoard
 			
 			board1 = boards[move - 1];
 			
-			//Changes the players moves
+			//Changes the players every move
 			if(turn % 2 == 0)
 			{
 				player = "X";

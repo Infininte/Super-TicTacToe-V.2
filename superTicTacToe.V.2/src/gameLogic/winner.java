@@ -1,5 +1,12 @@
 package gameLogic;
 
+/** @author Infininte
+ * 
+ * This hasn't changed much. It
+ *     tries every possible winning
+ *     combination.
+ **/
+
 public class winner 
 {
 	public String decideWinner(String[] cells, String move)
