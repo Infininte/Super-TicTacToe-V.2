@@ -8,7 +8,17 @@ package gameLogic;
 public class littleBoard 
 {
 	//The cells players move in
-	String[] cells = new String[9];
+	String[] cells = {
+		"none",
+		"none",
+		"none",
+		"none",
+		"none",
+		"none",
+		"none",
+		"none",
+		"none"
+	};
 	
 	//how bigBoard changes the cells
 	public void changeCells(int which, String what)
@@ -21,5 +31,10 @@ public class littleBoard
 	{
 		return(this.cells);
 	}
+	
+	/**public int[][] getPlacement()
+	{
+		return(this.placement);
+	}**/
 
 }

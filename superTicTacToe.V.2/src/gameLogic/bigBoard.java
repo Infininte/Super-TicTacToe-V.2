@@ -4,13 +4,26 @@ package gameLogic;
  * @author Infininte
  */
 
+import java.awt.Graphics;
 import java.util.Scanner;
-//import gui.printBoard;
+import gui.printBoard;
 import gameLogic.littleBoard;
 import gameLogic.winner;
 
 public class bigBoard 
 {
+	littleBoard[] boards= {
+		new littleBoard(),
+		new littleBoard(),
+		new littleBoard(),
+		new littleBoard(),
+		new littleBoard(),
+		new littleBoard(),
+		new littleBoard(),
+		new littleBoard(),
+		new littleBoard()
+	};
+	
 	public void play()
 	{
 		int turn;
@@ -21,21 +34,12 @@ public class bigBoard
 		littleBoard board1;
 		
 		winner win = new winner();
+		printBoard print = new printBoard();
 		Scanner input = new Scanner(System.in);
-		littleBoard[] boards= new littleBoard[9];
-		
-		//All the smaller boards
-		boards[0] = new littleBoard();
-		boards[1] = new littleBoard();
-		boards[2] = new littleBoard();
-		boards[3] = new littleBoard();
-		boards[4] = new littleBoard();
-		boards[5] = new littleBoard();
-		boards[6] = new littleBoard();
-		boards[7] = new littleBoard();
-		boards[8] = new littleBoard();
 		
 		//Pre-game input
+		print.GUI();
+		
 		System.out.println("Choose small board: ");
 		move = input.nextInt() % 10;
 		board1 = boards[move - 1];
@@ -47,11 +51,7 @@ public class bigBoard
 			move = input.nextInt() % 10;
 			board1.changeCells(move, player);
 			
-			for(loop = 0 ; loop < 9 ; loop++)
-			{
-				System.out.println("|" + loop + "|");
-				this.print(boards[loop].getBoard());
-			}
+			print.GUI();
 			
 			if(win.decideWinner(board1.getBoard(), player) != "none")
 			{
@@ -84,6 +84,10 @@ public class bigBoard
 		}
 	}
 	
+	public littleBoard[] getBoardList()
+	{
+		return(boards);
+	}
 }
 
 
